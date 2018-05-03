@@ -2,6 +2,8 @@ class User < ApplicationRecord
   
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", class_name:  "Relationship", dependent: :destroy
+  has_many :relationships, foreign_key: "followed_id", class_name:  "Relationship", dependent: :destroy
+  has_many :followers, through: :relationships, source: :follower
   has_many :followed_users, through: :relationships, source: :followed
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
