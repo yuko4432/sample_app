@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < ApplicationRecord::Base
   
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", class_name:  "Relationship", dependent: :destroy
