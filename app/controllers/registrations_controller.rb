@@ -1,6 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
+    puts "リソース"
+    puts resource.inspect
+    puts "リソース"
+
     user_path(resource)
   end
  
