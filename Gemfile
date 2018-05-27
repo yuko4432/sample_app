@@ -6,6 +6,12 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+# 画像保存
+gem 'carrierwave'
+# For Carrierwave(S3用)
+gem 'fog'
+# 画像加工用
+gem 'rmagick'
 
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

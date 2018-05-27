@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502073003) do
+ActiveRecord::Schema.define(version: 20180523034920) do
 
-  create_table "microposts", force: :cascade do |t|
-    t.string "content"
-    t.integer "user_id"
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
   end
+
+# Could not dump table "microposts" because of following StandardError
+#   Unknown type 'strong' for column 'image'
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
